@@ -1,0 +1,26 @@
+{% extends 'base.twig' %}
+
+{% block title %}
+    Edit Words
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Edit Words</h1>
+    <form method="post" action="{{ path_for('language.update') }}">
+        <div class="form-group row">
+            <label for="original" class="col-sm-2 col-form-label">Original</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="original" name="original" value="{{ word.original }}" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="translation" class="col-sm-2 col-form-label">Translation</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="translation" name="translation" value="{{ word.translation }}" required>
+            </div>
+        </div>
+        <input type="hidden" name="id" value="{{ word.id }}">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{{ path_for('language.show') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}
