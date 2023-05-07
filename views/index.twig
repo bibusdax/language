@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+
+{% block title %}Language Learning App{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Welcome to the Language Learning App</h1>
+  <p>Please login to start learning a new language or create and edit language files.</p>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form method="post" action="{{ path_for('auth.login') }}">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
